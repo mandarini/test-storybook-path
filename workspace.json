@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "one": "libs/one",
+    "two": "libs/two"
+  }
 }

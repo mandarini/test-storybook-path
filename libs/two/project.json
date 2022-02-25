@@ -1,0 +1,23 @@
+{
+  "root": "libs/two",
+  "sourceRoot": "libs/two/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/two/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/two"],
+      "options": {
+        "jestConfig": "libs/two/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
