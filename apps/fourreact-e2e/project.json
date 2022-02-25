@@ -1,0 +1,28 @@
+{
+  "root": "apps/fourreact-e2e",
+  "sourceRoot": "apps/fourreact-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/fourreact-e2e/cypress.json",
+        "devServerTarget": "fourreact:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "fourreact:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/fourreact-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["fourreact"]
+}

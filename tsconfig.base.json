@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@test-manzi/fourreact": ["libs/fourreact/src/index.ts"],
       "@test-manzi/one": ["libs/one/src/index.ts"],
+      "@test-manzi/threeng": ["libs/threeng/src/index.ts"],
       "@test-manzi/two": ["libs/two/src/index.ts"]
     }
   },

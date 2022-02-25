@@ -1,0 +1,59 @@
+{
+  "projectType": "library",
+  "root": "libs/threeng",
+  "sourceRoot": "libs/threeng/src",
+  "prefix": "test-manzi",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/threeng"],
+      "options": {
+        "jestConfig": "libs/threeng/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/threeng/src/**/*.ts",
+          "libs/threeng/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/threeng/.storybook"
+        },
+        "projectBuildConfig": "threeng:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/threeng",
+        "config": {
+          "configFolder": "libs/threeng/.storybook"
+        },
+        "projectBuildConfig": "threeng:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

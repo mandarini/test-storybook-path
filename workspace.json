@@ -1,12 +1,16 @@
 {
   "version": 2,
   "projects": {
+    "fourreact": "libs/fourreact",
+    "fourreact-e2e": "apps/fourreact-e2e",
     "one": "libs/one",
     "one-e2e": "apps/one-e2e",
     "other": "apps/other",
     "other-e2e": "apps/other-e2e",
     "otherr2": "apps/otherr2",
     "otherr2-e2e": "apps/otherr2-e2e",
+    "threeng": "libs/threeng",
+    "threeng-e2e": "apps/threeng-e2e",
     "two": "libs/two",
     "two-e2e": "apps/two-e2e",
     "web": "apps/web",
