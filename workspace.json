@@ -5,9 +5,13 @@
     "one-e2e": "apps/one-e2e",
     "other": "apps/other",
     "other-e2e": "apps/other-e2e",
+    "otherr2": "apps/otherr2",
+    "otherr2-e2e": "apps/otherr2-e2e",
     "two": "libs/two",
     "two-e2e": "apps/two-e2e",
     "web": "apps/web",
-    "web-e2e": "apps/web-e2e"
+    "web-e2e": "apps/web-e2e",
+    "webng2": "apps/webng2",
+    "webng2-e2e": "apps/webng2-e2e"
   }
 }

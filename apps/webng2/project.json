@@ -1,0 +1,90 @@
+{
+  "projectType": "application",
+  "root": "apps/webng2",
+  "sourceRoot": "apps/webng2/src",
+  "prefix": "test-manzi",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/webng2",
+        "index": "apps/webng2/src/index.html",
+        "main": "apps/webng2/src/main.ts",
+        "polyfills": "apps/webng2/src/polyfills.ts",
+        "tsConfig": "apps/webng2/tsconfig.app.json",
+        "assets": ["apps/webng2/src/favicon.ico", "apps/webng2/src/assets"],
+        "styles": ["apps/webng2/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/webng2/src/environments/environment.ts",
+              "with": "apps/webng2/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "webng2:build:production"
+        },
+        "development": {
+          "browserTarget": "webng2:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "webng2:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/webng2/src/**/*.ts",
+          "apps/webng2/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/webng2"],
+      "options": {
+        "jestConfig": "apps/webng2/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
